@@ -120,8 +120,8 @@ func Init() {
 
 		//Listen config change,key=dataId+group+namespaceId.
 		err = nacos.GetConfigClient().ListenConfig(vo.ConfigParam{
-			DataId: "config.yaml",
-			Group:  "diktok",
+			DataId: constant.NacosConfigId,
+			Group:  constant.NacosGroupName,
 			OnChange: func(namespace, group, dataId, data string) {
 				log.Println("配置文件被修改 重新载入全局变量")
 				err = viper.ReadConfig(strings.NewReader(data))

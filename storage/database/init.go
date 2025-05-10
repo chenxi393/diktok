@@ -81,22 +81,5 @@ func InitMySQL() {
 		zap.L().Fatal("MySQL 读写分离创建失败", zap.Error(err))
 	}
 	zap.L().Info("MySQL从库连接: 成功")
-	// 连接池什么的不懂 先放着
 	DB = db
-	//migration()
 }
-
-// 弃用自动建表
-// func migration() {
-// 	err :=DB.Set("gorm:table_options", "charset=utf8mb4").AutoMigrate(
-// 		&model.User{},
-// 		&model.Follow{},
-// 		&model.Video{},
-// 		&model.Favorite{},
-// 		&model.Comment{},
-// 		&model.Message{},
-// 	)
-// 	if err != nil {
-// 		zap.L().Fatal("数据库migration失败", zap.Error(err))
-// 	}
-// }

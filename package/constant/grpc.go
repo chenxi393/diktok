@@ -37,7 +37,7 @@ var (
 
 	NacosNameSpace        = "diktok-online"
 	NacosGroupName        = "diktok"
-	NacosConfigId         = "config_common"
+	NacosConfigId         = "config.yaml"
 	NacosIP               = "nacos"
 	NacosPort      uint64 = 8848
 )
